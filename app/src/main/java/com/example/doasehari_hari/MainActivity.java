@@ -2,14 +2,13 @@ package com.example.doasehari_hari;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModel;
-import androidx.lifecycle.ViewModelProvider;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 
+import com.example.doasehari_hari.adapter.DoaAdapter;
 import com.example.doasehari_hari.database.Doa;
 
 import java.util.List;
