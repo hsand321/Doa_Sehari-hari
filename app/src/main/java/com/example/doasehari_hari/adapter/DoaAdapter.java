@@ -1,8 +1,11 @@
 package com.example.doasehari_hari.adapter;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Filter;
+import android.widget.Filterable;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -14,7 +17,7 @@ import com.example.doasehari_hari.database.Doa;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DoaAdapter extends RecyclerView.Adapter<DoaAdapter.DoaHolder> {
+public class DoaAdapter extends RecyclerView.Adapter<DoaAdapter.DoaHolder> implements Filterable {
 
     private List<Doa> doas = new ArrayList<>();
 
@@ -32,7 +35,6 @@ public class DoaAdapter extends RecyclerView.Adapter<DoaAdapter.DoaHolder> {
         doaHolder.arabic.setText(pengenDoa.getArabic());
         doaHolder.latin.setText(pengenDoa.getLatin());
         doaHolder.translation.setText(pengenDoa.getTranslation());
-
     }
 
     @Override
@@ -43,6 +45,11 @@ public class DoaAdapter extends RecyclerView.Adapter<DoaAdapter.DoaHolder> {
     public void setDoas(List<Doa>doas){
         this.doas = doas;
         notifyDataSetChanged();
+    }
+
+    @Override
+    public Filter getFilter() {
+        return null;
     }
 
     class DoaHolder extends RecyclerView.ViewHolder {
